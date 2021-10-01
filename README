@@ -1,0 +1,7 @@
+Jenkins automation scripts for OCS cypress tests
+
+One can use either cypress dashboard or
+jenkins pipeline to run the tests in parallel.
+
+This scripts can be ported to jenkins pipeline
+to execute

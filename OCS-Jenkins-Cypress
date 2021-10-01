@@ -1,0 +1,9 @@
+TODO: Add the script to run on cypress-dashboard
+
+This needs the following flags to be configures from jenkins
+
+1. Cypress record key and
+2. Cypress project id
+
+Before that we need a cypress dashboard account created for us
+
