@@ -5,3 +5,14 @@ jenkins pipeline to run the tests in parallel.
 
 This scripts can be ported to jenkins pipeline
 to execute
+
+How to run the pipeline jenkins script
+
+Open a new pipeline project in Jenkins
+     1) Select "New Item"
+     2) Enter an item name: ocs-jenkins
+     3) Select "Pipeline"
+     4) Go to Pipeline under Advanced Project Options
+     5) Copy and paste the Jenkinsfile script
+     6) Apply and Save
+Click the Build Now option
