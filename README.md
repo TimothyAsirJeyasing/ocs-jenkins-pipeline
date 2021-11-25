@@ -12,14 +12,14 @@ Open a new pipeline project in Jenkins
 
      1) Select "New Item"
      2) Enter an item name: ocs-jenkins
-     3) Select "Pipeline"'
+     3) Select "Pipeline"
 
      4) Provide an appropriate description
      ![image](https://user-images.githubusercontent.com/6670284/143384049-fda4a39c-38b7-4ee8-b6e0-6b01a46ef25d.png)
 
      5) Scroll down and Go to Pipeline under Advanced Project Options
      6) Copy and paste the Jenkinsfile script
-     ![image](https://user-images.githubusercontent.com/6670284/143385294-15db5b49-7697-42ff-ad1f-64247667e2fe.png)
+     ![image](https://user-images.githubusercontent.com/6670284/143385377-49ecd003-a214-4973-bffe-a2c8ff5e3fbf.png)
      7) Edit the script and update the cluster details and the credentials under environment section
         Provide the BRIDGE_BASE_ADDRESS=<cluster url>
         and provide the BRIDGE_KUBEADMIN_PASSWORD=<password>
