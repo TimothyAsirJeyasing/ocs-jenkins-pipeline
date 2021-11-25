@@ -21,17 +21,18 @@ Scroll down and Go to Pipeline under Advanced Project Options
 Copy and paste the Jenkinsfile script
 ![image](https://user-images.githubusercontent.com/6670284/143385377-49ecd003-a214-4973-bffe-a2c8ff5e3fbf.png)
 
-After copying the scipt from the OCS Jenkins Pipeline Repo (https://github.com/TimothyAsirJeyasing/ocs-jenkins-pipeline),
-It is required to update the cluster details and the credentials time to time.
+After copying the script from the OCS Jenkins Pipeline Repo (https://github.com/TimothyAsirJeyasing/ocs-jenkins-pipeline),
 The variables BRIDGE_BASE_ADDRESS and BRIDGE_KUBEADMIN_PASSWORD are used in the environment section of the script.
+These values will be used at the run time. This values can be passed as a parameters during the build.
 ![image](https://user-images.githubusercontent.com/6670284/143384445-e84b4cfb-60f3-4c47-a29d-b3afe97e36ab.png)
 
-Once the parameeters are applied, we can click on Apply and Save buttons.
-It will show an another page with an options like Status, Changes, BuildNow, Configure, Delete pipeline and etc.,
-![image](https://user-images.githubusercontent.com/6670284/143386999-50ec2a4c-3cbe-415e-8e65-ab74e594a197.png)
+Once the script is copied we can click on Apply and Save buttons.
+It will display an another page which contains options like Status, Changes, BuildNow, Configure, Delete pipeline and etc.,
+![image](https://user-images.githubusercontent.com/6670284/143460228-9f98eac9-0fa8-40aa-b729-812db8e9d5b6.png)
 
-Click the Build Now option
+Then from the menu click on the "Build Now" or "Build with Parameters" to initiate the build
 ![image](https://user-images.githubusercontent.com/6670284/143384673-6bc8c9da-4dad-452c-acf2-ba07e2d9f13b.png)
-After clicking the build now option, We can see that the build starts within few second.
-By clicking the running build usually appears at the bottom of the left navication, we can go to the buid details page
-and can monitor the build execution, log and other details.
+Once a build is started, we can find the build link under "Build History" tag.
+
+By clicking the running build from the "Build History" tag, we can go to the buid details page
+and can monitor the build execution, access the build log, delete the build and also collect the OCS test report.
