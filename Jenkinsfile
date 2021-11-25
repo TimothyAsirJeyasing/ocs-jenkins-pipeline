@@ -5,6 +5,10 @@ pipeline {
       args '-u root:sudo -v $HOME/workspace/myproject:/myproject'
     }
   }
+  parameters{
+        string(name: 'Cluster', defaultValue: 'https://console-openshift-console.apps.bot-d81a1453-4ed0-4117-aeaa-d88316e69597.devcluster.openshift.com', description: "Enter the cluster url")
+        string(name: 'Password', defaultValue: '23sadfasf23fdsa', description: "Please provide the kubeadmin password")
+  }
 
     stages {
      stage('build-environment') {
@@ -23,8 +27,8 @@ pipeline {
     }
     stage('cypress parallel tests') {
       environment {
-        BRIDGE_BASE_ADDRESS='https://console-openshift-console.apps.rhamilto.devcluster.openshift.com'
-        BRIDGE_KUBEADMIN_PASSWORD='jcK5F-WFkYW-dEZLz-cc6Vq'
+	      BRIDGE_BASE_ADDRESS="${Cluster}"
+	      BRIDGE_KUBEADMIN_PASSWORD="${Password}"
       }
       parallel {
           // TODO: Loop over the parallel directory and execute the tests in parallel
