@@ -44,4 +44,11 @@ find the zip file to download which will contains all the reports and the test r
 ![image](https://user-images.githubusercontent.com/6670284/143462403-1649e35a-ee45-4404-a63f-ed6fbdbc1ac0.png)
 ![image](https://user-images.githubusercontent.com/6670284/143462495-3c1945b1-ca37-4d1f-bbaa-63def54c0db0.png)
 
+In the zip file under /OCS_20Test_20Report/cypress/screenshots
+we can get all the screenshots reports also.
+![image](https://user-images.githubusercontent.com/6670284/143463069-7ff9b0bd-71d6-46ea-b2e4-3c5edcb3a73f.png)
+
+Sample "OCS Operator Expansion of Storage Class Test" 
+![image](https://user-images.githubusercontent.com/6670284/143463279-99d517eb-4008-4172-b754-65ea64ff02dd.png)
+
 
