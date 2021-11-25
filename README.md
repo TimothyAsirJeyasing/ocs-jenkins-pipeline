@@ -8,7 +8,7 @@ This script can be directly ported to the Jenkins pipeline by choosing "New Item
 
 How to run the pipeline jenkins script
 
-Open a new pipeline project in Jenkins
+Open a new pipeline project in Jenkins and make sure you have added the required plugins like git, pipeline under manage plugins
 Select a "New Item" from the dashboard and provide an appropriate name to the job
 ![image](https://user-images.githubusercontent.com/6670284/143385586-89586789-bdf8-4f86-8f2b-e928bd43f46f.png)
 Select the "Pipeline" option from the Items list and press OK button
