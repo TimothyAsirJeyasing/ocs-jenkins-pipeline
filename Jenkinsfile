@@ -8,6 +8,7 @@ pipeline {
   parameters{
         string(name: 'Cluster', defaultValue: 'https://console-openshift-console.apps.bot-d81a1453-4ed0-4117-aeaa-d88316e69597.devcluster.openshift.com', description: "Enter the cluster url")
         string(name: 'Password', defaultValue: '23sadfasf23fdsa', description: "Please provide the kubeadmin password")
+        string(name: 'CypressPRID', defaultValue: '', description: "Please provide your cypress dashboard project id if available or keep blank this field")
   }
 
     stages {
@@ -29,6 +30,7 @@ pipeline {
       environment {
 	      BRIDGE_BASE_ADDRESS="${Cluster}"
 	      BRIDGE_KUBEADMIN_PASSWORD="${Password}"
+	      CYPRESS_PROJECT_ID="${CypressPRID}"
       }
       parallel {
           // TODO: Loop over the parallel directory and execute the tests in parallel
@@ -36,7 +38,7 @@ pipeline {
 	  // Some tests can not be executed in parallel.y
           stage('Test Add Capacity') {
           steps {
-            echo "Running build ${env.BUILD_ID}"
+            echo "Running build ${env.BUILD_ID} using the cluster: ${Cluster}"
             sh 'cd frontend/packages/ceph-storage-plugin/integration-tests-cypress && node --max-old-space-size=4096 ../../../node_modules/.bin/cypress run --config-file cypress-ceph.json --env openshift=true --browser ${BRIDGE_E2E_BROWSER_NAME:=chrome} --headless --spec tests/add-capacity.spec.ts'
           }
         }
@@ -55,12 +57,18 @@ pipeline {
 
           } // Parallel
     } // Stage
-    // Generate Report section start after the parallel execution stops.
-    stage ('Generate Report') {
-        steps {
-            echo "Run Report"
-            sh 'yarn run cy: report'
-        }
-    }
   } // Stages
+     post {
+    always {
+            echo "Run Report"
+              publishHTML (target: [
+      allowMissing: false,
+      alwaysLinkToLastBuild: false,
+      keepAll: true,
+      reportDir: 'frontend/gui_test_screenshots/',
+      reportFiles: 'cypress_report_ceph.html',
+      reportName: "OCS Test Report"
+    ])
+    } // always
+   } // post
 }
